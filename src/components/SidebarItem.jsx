@@ -30,7 +30,7 @@ const SidebarItem = ({ sidebarItems, selectedItem, onSelect, config }) => {
                 selectedItem === item
                   ? `${
                       index === 1
-                        ? "bg-red-100 text-red-500"
+                        ? "bg-red-100 text-red-500 font-semibold"
                         : "bg-violet-100 text-violet-500 font-semibold"
                     } `
                   : "bg-white text-black font-medium"
