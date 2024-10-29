@@ -1,6 +1,6 @@
-import Credit from "./Credit";
-import SubscriptionButton from "./SubscriptionButton";
-import MiscIconButton from "./MiscIconButton";
+import Credit from "../components/Credit";
+import SubscriptionButton from "../components/SubscriptionButton";
+import MiscIconButton from "../components/MiscIconButton";
 
 const MainHeader = () => {
   return (
