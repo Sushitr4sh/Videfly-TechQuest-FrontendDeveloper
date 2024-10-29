@@ -2,9 +2,16 @@ import { useState } from "react";
 import { Outlet } from "react-router-dom";
 
 import QuickActionBar from "../components/QuickActionBar";
+import DashboardSection from "../components/DashboardSection";
+import ContentCategory from "../components/ContentCategory";
+import ContentCategoryItem from "../components/ContentCategoryItem";
 
 import { Icon } from "@iconify/react/dist/iconify.js";
-import { UserStar02Icon } from "hugeicons-react";
+import {
+  UserStar02Icon,
+  ScissorIcon,
+  AddCircleHalfDotIcon,
+} from "hugeicons-react";
 
 const actionBars = [
   {
@@ -34,9 +41,9 @@ const Dashboard = () => {
       <Outlet />
       <main className="mt-24 ml-10">
         <div className="w-full h-[26vh] gradient-banner relative flex items-center justify-center rounded-2xl ">
-          <p className="text-white text-[2rem] font-extrabold">
+          <h2 className="text-white text-[2rem] font-extrabold">
             Mulai kreasi baru hari ini!
-          </p>
+          </h2>
           <QuickActionBar
             gridItems={actionBars}
             selectedItem={selectedItem}
@@ -82,6 +89,45 @@ const Dashboard = () => {
             alt="elipse"
             className="absolute top-0 right-0"
           />
+        </div>
+        <div className="mt-16">
+          <DashboardSection title="Kelola Konten">
+            <div className="px-6 flex gap-x-6">
+              <ContentCategory contentTitle="Lanjutkan">
+                <ContentCategoryItem
+                  contentDescription="Alchemist Fragrance"
+                  type="Video"
+                  icon={<ScissorIcon size={18} color="#ffffff" />}
+                  percentage={50}
+                />
+                <ContentCategoryItem
+                  contentDescription="Beauty of Angel - Lip Scrub"
+                  type="Video"
+                  icon={<ScissorIcon size={18} color="#ffffff" />}
+                  percentage={75}
+                />
+              </ContentCategory>
+              <ContentCategory contentTitle="Agenda Hari Ini">
+                <ContentCategoryItem
+                  contentDescription="Alchemist Fragrance"
+                  type="Video"
+                  icon={<AddCircleHalfDotIcon size={18} color="#ffffff" />}
+                />
+                <ContentCategoryItem
+                  contentDescription="Beauty of Angel - Lip Scrub"
+                  type="Design"
+                  icon={<AddCircleHalfDotIcon size={18} color="#ffffff" />}
+                />
+              </ContentCategory>
+              <ContentCategory contentTitle="Agenda Besok">
+                <ContentCategoryItem
+                  contentDescription="Beauty of Angel - Lip Scrub"
+                  type="Design"
+                  icon={<AddCircleHalfDotIcon size={18} color="#ffffff" />}
+                />
+              </ContentCategory>
+            </div>
+          </DashboardSection>
         </div>
       </main>
     </>
