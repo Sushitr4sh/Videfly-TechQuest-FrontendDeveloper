@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.gradient-button {
+  background: linear-gradient(
+    to right,
+    #f27121,
+    #ee593b,
+    #e94057,
+    #af3e9c,
+    #703be7
+  );
+}
