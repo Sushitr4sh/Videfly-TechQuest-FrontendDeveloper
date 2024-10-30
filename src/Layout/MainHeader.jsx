@@ -4,7 +4,7 @@ import MiscIconButton from "../components/MiscIconButton";
 
 const MainHeader = () => {
   return (
-    <header className="fixed left-0 top-0 bg-white flex w-full items-center justify-between px-10 py-1 gap-x-2">
+    <header className="fixed left-0 top-0 bg-white flex w-full items-center justify-between px-10 py-1 gap-x-2 z-40">
       <div />
       <nav className="flex gap-x-6 ">
         <div className="flex items-center">

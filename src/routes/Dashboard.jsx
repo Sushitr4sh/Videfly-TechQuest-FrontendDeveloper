@@ -12,6 +12,7 @@ import {
   ScissorIcon,
   AddCircleHalfDotIcon,
 } from "hugeicons-react";
+import Carousel from "../components/Carousel";
 
 const actionBars = [
   {
@@ -34,13 +35,37 @@ const actionBars = [
   },
 ];
 
+const carouselItems = [
+  {
+    duration: "Drafted",
+    title: "Alchemist Fragrance",
+    date: "1 menit lalu",
+    src: "/images/carousel.png",
+    icon: <ScissorIcon size={18} color="#ffffff" />,
+  },
+  {
+    duration: "Drafted",
+    title: "Product A Skincare",
+    date: "15 menit lalu",
+    src: "/images/carousel.png",
+    icon: <ScissorIcon size={18} color="#ffffff" />,
+  },
+  {
+    duration: "01:00",
+    title: "Product A Skincare",
+    date: "9 Oktober 2024",
+    src: "/images/carousel.png",
+    icon: <ScissorIcon size={18} color="#ffffff" />,
+  },
+];
+
 const Dashboard = () => {
   const [selectedItem, setSelectedItem] = useState(null);
   return (
     <>
       <Outlet />
-      <main className="mt-24 ml-10">
-        <div className="w-full h-[26vh] gradient-banner relative flex items-center justify-center rounded-2xl ">
+      <main className="mt-24 ml-10 pb-12">
+        <div className="w-full h-[26vh] gradient-banner relative flex items-center justify-center rounded-2xl">
           <h2 className="text-white text-[2rem] font-extrabold">
             Mulai kreasi baru hari ini!
           </h2>
@@ -90,7 +115,7 @@ const Dashboard = () => {
             className="absolute top-0 right-0"
           />
         </div>
-        <div className="mt-16">
+        <div className="mt-16 flex flex-col gap-y-8">
           <DashboardSection title="Kelola Konten">
             <div className="px-6 flex gap-x-6">
               <ContentCategory contentTitle="Lanjutkan">
@@ -127,6 +152,9 @@ const Dashboard = () => {
                 />
               </ContentCategory>
             </div>
+          </DashboardSection>
+          <DashboardSection title="Proyek">
+            <Carousel items={carouselItems} />
           </DashboardSection>
         </div>
       </main>

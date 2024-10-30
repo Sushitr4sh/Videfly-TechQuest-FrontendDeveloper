@@ -7,9 +7,9 @@ const RootLayout = () => {
   return (
     <>
       <section className="flex w-full">
+        <MainHeader />
         <Sidebar />
-        <main className="relative w-[80%]">
-          <MainHeader />
+        <main className="relative w-[80%] ml-[260px]">
           <Outlet />
         </main>
       </section>

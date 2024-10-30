@@ -2,7 +2,7 @@ import React from "react";
 
 const QuickActionBar = ({ gridItems, selectedItem, onSelect }) => {
   return (
-    <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 flex w-[72%]  p-2 rounded-2xl bg-white z-50 border-2 border-[#ececec]">
+    <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 flex w-[72%]  p-2 rounded-2xl bg-white z-30 border-2 border-[#ececec]">
       {gridItems.map((item, index) => (
         <button
           key={index}

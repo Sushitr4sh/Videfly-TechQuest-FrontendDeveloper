@@ -84,7 +84,7 @@ const Sidebar = () => {
   };
 
   return (
-    <aside className="flex flex-col justify-between px-4 py-6 border-r-2 border-[#ececec] w-[260px] h-[100vh] z-50 gap-y-3">
+    <aside className="flex flex-col justify-between px-4 py-6 border-r-2 border-[#ececec] w-[260px] h-screen z-50 gap-y-3 bg-white fixed top-0 left-0">
       <Link to="/" className="self-center">
         <img src="/icons/logo.svg" alt="videflt logo" />
       </Link>
