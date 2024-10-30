@@ -6,7 +6,7 @@ const MiscIconButton = ({ src, alt }) => {
       <img
         src={src}
         alt={alt}
-        className="w-10 h-10 rounded-lg hover:bg-violet-300 transition duration-200"
+        className="w-8 h-8 md:w-6 md:h-6 md:mr-2 rounded-lg lg:hover:bg-violet-300 transition duration- p-0"
       />
     </button>
   );

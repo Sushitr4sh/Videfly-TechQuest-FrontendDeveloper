@@ -6,10 +6,12 @@ import Sidebar from "../Layout/Sidebar";
 const RootLayout = () => {
   return (
     <>
-      <section className="flex w-full">
+      <section className="lg:flex w-full">
         <MainHeader />
-        <Sidebar />
-        <main className="relative w-[80%] ml-[260px]">
+        <div className="hidden lg:block">
+          <Sidebar />
+        </div>
+        <main className="relative w-full lg:ml-[260px] lg:mr-10">
           <Outlet />
         </main>
       </section>

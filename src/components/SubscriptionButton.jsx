@@ -4,7 +4,7 @@ const SubscriptionButton = ({ children }) => {
   return (
     <button
       type="button"
-      className="gradient-button from-[#F27121] text-xs text-white font-semibold px-4 rounded-lg h-[1.875rem]"
+      className="hidden md:block gradient-button from-[#F27121] md:text-xs text-white font-semibold px-4 rounded-lg h-[1.875rem]"
     >
       {children}
     </button>
