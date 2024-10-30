@@ -1,14 +1,21 @@
-import React from "react";
+import { Notification01Icon } from "hugeicons-react";
 
-const MiscIconButton = ({ src, alt }) => {
+const MiscIconButton = ({ isNotifOpen, onSelect }) => {
   return (
-    <button className="">
-      <img
-        src={src}
-        alt={alt}
-        className="w-8 h-8 md:w-6 md:h-6 md:mr-2 rounded-lg lg:hover:bg-violet-300 transition duration- p-0"
-      />
-    </button>
+    <div className="relative">
+      <button
+        onClick={() => onSelect(!isNotifOpen)}
+        className="w-10 h-10 flex md:hidden justify-center items-center  rounded-lg lg:hover:bg-violet-300 transition duration-200 "
+      >
+        <Notification01Icon size={36} color="#703BE7" strokeWidth={1.5} />
+      </button>
+      <button
+        onClick={() => onSelect(!isNotifOpen)}
+        className="hidden md:flex w-10 h-10 justify-center items-center  rounded-lg lg:hover:bg-violet-300 transition duration-200"
+      >
+        <Notification01Icon size={18} color="#703BE7" strokeWidth={1.5} />
+      </button>
+    </div>
   );
 };
 

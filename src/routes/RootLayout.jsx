@@ -11,7 +11,7 @@ const RootLayout = () => {
         <div className="hidden lg:block">
           <Sidebar />
         </div>
-        <main className="relative w-full lg:ml-[260px] lg:mr-10">
+        <main className="relative w-full lg:ml-[260px] lg:mr-5">
           <Outlet />
         </main>
       </section>
