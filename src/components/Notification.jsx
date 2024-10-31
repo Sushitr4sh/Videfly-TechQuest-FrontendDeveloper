@@ -2,7 +2,7 @@ import { TickDouble02Icon, Cancel01Icon } from "hugeicons-react";
 
 const Notification = ({ notifications }) => {
   return (
-    <div className="fixed bg-white top-14 right-0 flex flex-col gap-y-4 rounded-2xl py-4 shadow-[8px_8px_8px_rgba(0,0,0,0.15)] border border-[#ececec] w-screen sm:w-[70vw] lg:w-[50vw] xl:w-[32vw]">
+    <div className="fixed bg-white top-14 right-0 flex flex-col gap-y-4 rounded-2xl py-4 shadow-[8px_8px_8px_rgba(0,0,0,0.15)] border border-[#ececec] w-screen sm:w-[70vw] lg:w-[50vw] xl:w-[32vw] -z-10">
       <div className="flex justify-between items-center pb-4 border-b-[1.5px] border-[#f1f1f1] z-20">
         <p className="font-bold text-base ml-6">Notifications</p>
         <div className="flex items-center gap-x-6 mr-6">
@@ -18,7 +18,7 @@ const Notification = ({ notifications }) => {
         <button className="ml-6 flex gap-x-2 pb-4 relative w-min">
           <p className="font-semibold text-sm text-nowrap">All Inbox</p>
           <div className="rounded-[0.188rem] bg-[#E94057] font-semibold text-white text-xs self-start flex justify-center items-center w-[1.125rem] h-[1.125rem]">
-            3
+            {notifications.length}
           </div>
           <div className="absolute bottom-0 left-0 bg-[#703BE7] h-[4px] w-full rounded-full" />
         </button>

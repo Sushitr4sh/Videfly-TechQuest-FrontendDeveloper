@@ -7,9 +7,9 @@ const Carousel = ({ items }) => {
   return (
     <div className="relative">
       <div className="overflow-x-auto flex scrollbar-hide space-x-2 snap-x snap-mandatory pb-4 lg:pb-0">
-        {items.map((item) => (
+        {items.map((item, index) => (
           <div
-            key={item.id}
+            key={index}
             className="w-[80%] md:w-[40%] lg:w-[25%] pb-3 border-2 border-[#ececec] rounded-2xl shrink-0 flex items-center justify-center overflow-hidden relative snap-center"
           >
             <div className="w-full">
