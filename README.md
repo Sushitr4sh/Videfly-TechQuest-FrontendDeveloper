@@ -40,4 +40,4 @@ Convert the provided dashboard design into a fully functional, responsive front-
 
 1. Clone the repository.
 2. Install necessary dependencies `npm install`.
-3. Use `npm start` to view the project locally.
+3. Use `npm run dev` to view the project locally.
