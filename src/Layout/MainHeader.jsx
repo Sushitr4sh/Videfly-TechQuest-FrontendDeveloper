@@ -70,7 +70,7 @@ const MainHeader = () => {
       <nav className="flex gap-x-6 ">
         <div className="flex items-center">
           <Credit>Sisa 5 kredit</Credit>
-          <SubscriptionButton>Upgrad plan</SubscriptionButton>
+          <SubscriptionButton>Upgrade plan</SubscriptionButton>
         </div>
         <div className="flex gap-x-1 items-center">
           <MiscIconButton isNotifOpen={isNotifOpen} onSelect={setIsNotifOpen} />
