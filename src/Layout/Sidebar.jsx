@@ -84,15 +84,21 @@ const Sidebar = () => {
   };
 
   return (
-    <aside className="flex flex-col justify-between px-4 py-6 border-r-2 border-[#ececec] w-[260px] h-[100dvh] z-50 gap-y-3 bg-white fixed top-0 left-0">
-      <Link to="/" className="self-center">
-        <img src="/icons/logo.svg" alt="videflt logo" />
-      </Link>
-      <MainButton
-        rightIcon={<AddCircleHalfDotIcon size={24} strokeWidth={2} />}
-      >
-        Buat Video
-      </MainButton>
+    <aside className="flex flex-col justify-between pt-16 px-4 pb-6 border-r-2 border-[#ececec] w-[260px] h-[100dvh] z-50 gap-y-3 bg-white fixed top-0 left-0">
+      <div className="flex flex-col">
+        <Link to="/" className="self-center">
+          <img
+            src="/icons/logo.svg"
+            alt="videfly logo"
+            className="w-[8.75rem]"
+          />
+        </Link>
+        <MainButton
+          rightIcon={<AddCircleHalfDotIcon size={24} strokeWidth={2} />}
+        >
+          Buat Video
+        </MainButton>
+      </div>
       <SidebarItem
         sidebarItems={sidebarItems}
         selectedItem={selectedItem}

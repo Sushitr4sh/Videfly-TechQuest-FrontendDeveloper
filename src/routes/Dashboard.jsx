@@ -64,7 +64,7 @@ const Dashboard = () => {
   return (
     <>
       <Outlet />
-      <main className="mt-20 lg:mt-24 mx-5 lg:ml-10 pb-5 lg:pb-12">
+      <main className="mt-[4.375rem] lg:mt-24 mx-4 lg:ml-10 pb-5 lg:pb-12">
         <div className="w-full h-[26vh] gradient-banner relative flex items-center justify-center rounded-2xl px-8 lg:px-0">
           <h2 className="text-white text-4xl text-[2rem] font-extrabold z-30 text-center">
             Mulai kreasi baru hari ini!

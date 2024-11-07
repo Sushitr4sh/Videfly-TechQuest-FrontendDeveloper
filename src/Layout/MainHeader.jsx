@@ -60,8 +60,47 @@ const MainHeader = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isNotifOpen, setIsNotifOpen] = useState(false);
   return (
-    <header className="fixed left-0 top-0 bg-white flex w-full items-center justify-between px-5 lg:px-10 py-2 lg:py-1 gap-x-2 z-40">
-      <Menu03Icon onClick={() => setIsOpen(true)} />
+    <header className="fixed left-0 top-0 bg-white flex w-full h-[3.5rem] items-center justify-between px-4 lg:px-10 lg:py-1 z-40">
+      <div className="flex gap-x-3">
+        <button onClick={() => setIsOpen(true)}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+          >
+            <line
+              x1="4.65"
+              y1="5.35"
+              x2="19.35"
+              y2="5.35"
+              stroke="#111336"
+              stroke-width="1.3"
+              stroke-linecap="round"
+            />
+            <line
+              x1="4.65"
+              y1="11.35"
+              x2="15.35"
+              y2="11.35"
+              stroke="#111336"
+              stroke-width="1.3"
+              stroke-linecap="round"
+            />
+            <line
+              x1="4.65"
+              y1="17.35"
+              x2="19.35"
+              y2="17.35"
+              stroke="#111336"
+              stroke-width="1.3"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+        <img src="/icons/logo.svg" alt="videfly logo" />
+      </div>
       {isOpen && (
         <Modal onClose={setIsOpen}>
           <Sidebar />
@@ -73,13 +112,13 @@ const MainHeader = () => {
           <SubscriptionButton>Upgrade plan</SubscriptionButton>
         </div>
         <div className="flex gap-x-1 items-center">
-          <MiscIconButton isNotifOpen={isNotifOpen} onSelect={setIsNotifOpen} />
+          {/* <MiscIconButton isNotifOpen={isNotifOpen} onSelect={setIsNotifOpen} /> */}
           <div className="flex items-center gap-x-3 md:gap-x-2">
             <p className="md:text-xs hidden md:block">Dewi Anjani</p>
             <img
               src="/images/Profile.png"
               alt="Profile Image"
-              className="w-10 h-10 lg:w-auto md:h-auto"
+              className="w-9 h-9 lg:w-auto md:h-auto"
             />
           </div>
         </div>
