@@ -111,7 +111,7 @@ const MainHeader = ({ isNotifOpen, setIsNotifOpen }) => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="fixed inset-0 flex items-center justify-center bg-black/20"
+              className="fixed inset-0 flex items-center h-[100dvh] justify-center bg-black/20"
             >
               <Modal onClose={() => setIsOpen(false)} />
             </motion.div>
@@ -121,9 +121,13 @@ const MainHeader = ({ isNotifOpen, setIsNotifOpen }) => {
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
               transition={{ duration: 0.3 }}
-              className="fixed top-0 left-0 h-full w-64 bg-white shadow-lg"
+              className="fixed top-0 left-0 h-[100dvh] w-64 bg-white shadow-lg"
             >
-              <Sidebar onClose={() => setIsOpen(false)} />
+              <Sidebar
+                onClose={() => setIsOpen(false)}
+                isNotifOpen={isNotifOpen}
+                onSelect={setIsNotifOpen}
+              />
             </motion.div>
           </>
         )}

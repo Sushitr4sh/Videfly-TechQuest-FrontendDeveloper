@@ -11,7 +11,7 @@ const RootLayout = () => {
       <section className="lg:flex w-full">
         <MainHeader isNotifOpen={isNotifOpen} setIsNotifOpen={setIsNotifOpen} />
         <div className="hidden sm:block">
-          <Sidebar isNotifOpen={isNotifOpen} setIsNotifOpen={setIsNotifOpen} />
+          <Sidebar />
         </div>
         <main className="relative w-full">
           <Outlet />
