@@ -72,12 +72,12 @@ const Dashboard = () => {
   return (
     <>
       <Outlet />
-      <main className="mt-[4.375rem] lg:mt-24 mx-4 lg:ml-10 pb-5 lg:pb-12">
-        <div className="w-full h-[8.75rem] gradient-banner relative flex items-center justify-center rounded-2xl px-8 lg:px-0">
-          <h2 className="text-white text-xl text-[2rem] font-extrabold z-30 text-center">
+      <main className="mt-[4.375rem] sm:mt-[5.75rem] mx-4 sm:mr-6 sm:ml-[6.5rem] lg:mr-[2.625rem] lg:ml-[7.625rem] 2xl:ml-[18.875rem] pb-4">
+        <div className="w-full h-[8.75rem] lg:h-[11.25rem] gradient-banner relative flex items-center justify-center rounded-2xl px-8 lg:px-0">
+          <h2 className="text-white text-xl sm:text-2xl lg:text-[2rem] font-extrabold z-30 text-center">
             Mulai kreasi baru hari ini!
           </h2>
-          <div className="w-[95%] xl:w-[72%] lg:block absolute -bottom-8 left-1/2 transform -translate-x-1/2 z-30">
+          <div className="w-[22rem] sm:w-[30.75rem] lg:w-[46rem] absolute -bottom-8 left-1/2 transform -translate-x-1/2 z-30">
             <QuickActionBar
               gridItems={actionBars}
               selectedItem={selectedItem}
@@ -104,6 +104,28 @@ const Dashboard = () => {
             alt="elipse"
             className="absolute bottom-0 left-1/2 transform -translate-x-1/2"
           />
+          <img
+            src="/images/mobile_elipse4.png"
+            alt="elipse"
+            className="hidden sm:block md:hidden absolute right-0 bottom-0"
+          />
+          <img
+            src="/images/mobile_elipse5.png"
+            alt="elipse"
+            className="hidden md:block lg:hidden absolute right-8 bottom-0"
+          />
+          <img
+            src="/images/mobile_elipse2_0.png"
+            alt="elipse"
+            className="hidden lg:block absolute bottom-0 left-1/2 transform -translate-x-1/2"
+          />
+          {
+            <img
+              src="/images/mobile_elipse7.png"
+              alt="elipse"
+              className="hidden lg:block absolute right-0 top-0"
+            />
+          }
         </div>
         <div className="mt-16 lg:mt-16 flex flex-col gap-y-4 lg:gap-y-8">
           <DashboardSection title="Kelola Konten">
@@ -113,14 +135,12 @@ const Dashboard = () => {
                   contentDescription="Alchemist Fragrance"
                   type="Video"
                   icon={<ScissorIcon size={18} color="#ffffff" />}
-                  percentage={50}
                   priority="Penting"
                 />
                 <ContentCategoryItem
                   contentDescription="Beauty of Angel - Lip Scrub"
                   type="Video"
                   icon={<ScissorIcon size={18} color="#ffffff" />}
-                  percentage={75}
                   priority="Tinggi"
                 />
               </ContentCategory>

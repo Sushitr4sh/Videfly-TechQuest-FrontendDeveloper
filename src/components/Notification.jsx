@@ -1,6 +1,6 @@
 import { TickDouble02Icon, Cancel01Icon } from "hugeicons-react";
 
-const Notification = ({ notifications }) => {
+const Notification = ({ notifications, onSelect }) => {
   return (
     <div className="fixed bg-white top-14 right-0 flex flex-col gap-y-4 rounded-2xl py-4 shadow-[8px_8px_8px_rgba(0,0,0,0.15)] border border-[#ececec] w-screen sm:w-[70vw] lg:w-[50vw] xl:w-[32vw] -z-10">
       <div className="flex justify-between items-center pb-4 border-b-[1.5px] border-[#f1f1f1] z-20">
@@ -9,7 +9,7 @@ const Notification = ({ notifications }) => {
           <button>
             <TickDouble02Icon size={24} />
           </button>
-          <button>
+          <button onClick={() => onSelect(false)}>
             <Cancel01Icon size={24} />
           </button>
         </div>

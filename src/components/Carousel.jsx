@@ -10,12 +10,12 @@ const Carousel = ({ items }) => {
         {items.map((item, index) => (
           <div
             key={index}
-            className="w-[70.55%] md:w-[40%] lg:w-[25%] pb-3 border-2 border-[#ececec] rounded-2xl shrink-0 flex items-center justify-center overflow-hidden relative snap-center"
+            className="w-[15.875rem] pb-3 border border-[#ececec] rounded-2xl shrink-0 flex items-center justify-center overflow-hidden relative snap-center"
           >
             <div className="w-full">
               <img
                 src={item.src}
-                className="object-cover object-top w-full h-[30vh] rounded-2xl"
+                className="object-cover object-top w-full h-[11.25rem] rounded-2xl"
                 alt="Carousel Image 2"
               />
               <div className="flex items-center text-white justify-between w-full absolute top-0 p-3">

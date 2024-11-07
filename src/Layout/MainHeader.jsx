@@ -9,6 +9,7 @@ import Notification from "../components/Notification";
 
 import { Menu03Icon } from "hugeicons-react";
 import { Icon } from "@iconify/react/dist/iconify.js";
+import { motion, AnimatePresence } from "framer-motion";
 
 const notifications = [
   {
@@ -56,13 +57,13 @@ const notifications = [
   },
 ];
 
-const MainHeader = () => {
+const MainHeader = ({ isNotifOpen, setIsNotifOpen }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isNotifOpen, setIsNotifOpen] = useState(false);
+
   return (
-    <header className="fixed left-0 top-0 bg-white flex w-full h-[3.5rem] items-center justify-between px-4 lg:px-10 lg:py-1 z-40">
+    <header className="fixed left-0 top-0 bg-white flex w-full h-[3.5rem] items-center justify-between px-4 sm:px-6 lg:px-10 lg:py-1 z-40">
       <div className="flex gap-x-3">
-        <button onClick={() => setIsOpen(true)}>
+        <button onClick={() => setIsOpen(true)} className="sm:hidden">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -76,8 +77,8 @@ const MainHeader = () => {
               x2="19.35"
               y2="5.35"
               stroke="#111336"
-              stroke-width="1.3"
-              stroke-linecap="round"
+              strokeWidth="1.3"
+              strokeLinecap="round"
             />
             <line
               x1="4.65"
@@ -85,8 +86,8 @@ const MainHeader = () => {
               x2="15.35"
               y2="11.35"
               stroke="#111336"
-              stroke-width="1.3"
-              stroke-linecap="round"
+              strokeWidth="1.3"
+              strokeLinecap="round"
             />
             <line
               x1="4.65"
@@ -94,35 +95,79 @@ const MainHeader = () => {
               x2="19.35"
               y2="17.35"
               stroke="#111336"
-              stroke-width="1.3"
-              stroke-linecap="round"
+              strokeWidth="1.3"
+              strokeLinecap="round"
             />
           </svg>
         </button>
-        <img src="/icons/logo.svg" alt="videfly logo" />
+        <img src="/icons/logo.svg" alt="videfly logo" className="sm:hidden" />
       </div>
-      {isOpen && (
-        <Modal onClose={setIsOpen}>
-          <Sidebar onClose={setIsOpen} />
-        </Modal>
-      )}
-      <nav className="flex gap-x-6 ">
-        <div className="hidden lg:flex items-center">
-          <Credit>Sisa 5 kredit</Credit>
+      <AnimatePresence>
+        {isOpen && (
+          <>
+            <motion.div
+              key="modal"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="fixed inset-0 flex items-center justify-center bg-black/20"
+            >
+              <Modal onClose={() => setIsOpen(false)} />
+            </motion.div>
+            <motion.div
+              key="sidebar"
+              initial={{ x: "-100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "-100%" }}
+              transition={{ duration: 0.3 }}
+              className="fixed top-0 left-0 h-full w-64 bg-white shadow-lg"
+            >
+              <Sidebar onClose={() => setIsOpen(false)} />
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+      <nav className="flex gap-x-4 ">
+        <div className="hidden sm:flex items-center">
+          <div className="hidden lg:block">
+            <Credit>Sisa 5 kredit</Credit>
+          </div>
           <SubscriptionButton>Upgrade plan</SubscriptionButton>
         </div>
         <div className="flex gap-x-1 items-center">
-          <div className="flex items-center gap-x-3 md:gap-x-2">
-            <p className="md:text-xs hidden md:block">Dewi Anjani</p>
+          <div className="hidden sm:block">
+            <MiscIconButton
+              isNotifOpen={isNotifOpen}
+              onSelect={setIsNotifOpen}
+            />
+          </div>
+          <div className="flex items-center gap-x-3 sm:gap-x-2">
+            <p className="sm:text-xs hidden sm:block">Dewi Anjani</p>
             <img
               src="/images/Profile.png"
               alt="Profile Image"
-              className="w-9 h-9 lg:w-auto md:h-auto"
+              className="w-9 h-9"
             />
           </div>
         </div>
       </nav>
-      {isNotifOpen && <Notification notifications={notifications} />}
+      <AnimatePresence>
+        {isNotifOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="absolute"
+          >
+            <Notification
+              notifications={notifications}
+              onSelect={setIsNotifOpen}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 };

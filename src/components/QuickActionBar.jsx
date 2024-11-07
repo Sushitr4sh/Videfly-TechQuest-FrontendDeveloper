@@ -2,12 +2,12 @@ import React from "react";
 
 const QuickActionBar = ({ gridItems, selectedItem, onSelect }) => {
   return (
-    <div className="flex overflow-x-scroll w-full  p-2 rounded-xl bg-white z-30 lg:border-2 border border-[#ececec] hide-scrollbar ">
+    <div className="flex items-center justify-start overflow-x-scroll w-full p-2 rounded-xl lg:rounded-2xl bg-white z-30 border border-[#ececec] hide-scrollbar ">
       {gridItems.map((item, index) => (
         <button
           key={index}
           onClick={() => onSelect(item)}
-          className={`hover:bg-[#dbdbdc] flex items-center justify-center gap-x-2 font-semibold text-xs px-2 py-1 rounded-xl transition duration-200 ${
+          className={`hover:bg-[#dbdbdc] flex items-center justify-center gap-x-2 font-medium text-xs lg:text-sm px-2 py-1 lg:p-8 lg:pl-2 lg:pr-4 lg:py-[0.625rem] rounded-xl transition duration-200 sm:w-full ${
             selectedItem === item ? "bg-[#dbdbdc]" : "bg-white"
           }`}
         >

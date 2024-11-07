@@ -1,6 +1,8 @@
 const Credit = ({ children }) => {
   return (
-    <p className="text-orange-500 font-semibold text-xs md:block">{children}</p>
+    <p className="text-orange-500 font-semibold text-xs lg:text-nowrap lg:px-4">
+      {children}
+    </p>
   );
 };
 

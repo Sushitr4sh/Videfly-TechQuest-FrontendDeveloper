@@ -8,7 +8,7 @@ const ContentCategoryItem = ({
   percentage = 0,
 }) => {
   return (
-    <div className="flex flex-col border-2 border-[#ECECEC] rounded-2xl overflow-hidden p-4 relative">
+    <div className="flex flex-col border border-[#ECECEC] rounded-2xl overflow-hidden p-4 relative">
       <div className="flex justify-between">
         <div className="flex flex-col gap-y-1">
           <h5 className="font-semibold text-sm lg:text-xs mb-1-">
