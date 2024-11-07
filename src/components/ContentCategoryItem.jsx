@@ -1,31 +1,74 @@
+import { Icon } from "@iconify/react/dist/iconify.js";
+
 const ContentCategoryItem = ({
   contentDescription,
   type,
   icon,
+  priority = "Normal",
   percentage = 0,
 }) => {
   return (
-    <div className="flex flex-col border-2 border-[#ECECEC] rounded-2xl overflow-hidden">
-      <div className="flex justify-between px-4 pt-2 pb-[1.125rem]">
-        <div>
+    <div className="flex flex-col border-2 border-[#ECECEC] rounded-2xl overflow-hidden p-4 relative">
+      <div className="flex justify-between">
+        <div className="flex flex-col gap-y-1">
           <h5 className="font-semibold text-sm lg:text-xs mb-1-">
             {contentDescription}
           </h5>
-          <span
-            className={
-              type === "Video"
-                ? "bg-[#FFD9D2] rounded-md px-2 py-[0.125rem] font-medium text-[#FE846F] text-xs lg:text-[0.668rem]"
-                : "bg-[#BFE8FF] rounded-md px-2 py-[0.125rem] font-medium text-[#65B9E7] text-xs lg:text-[0.668rem]"
-            }
-          >
-            {type}
-          </span>
+          <div className="flex items-center gap-x-2">
+            <button
+              className={
+                type === "Video"
+                  ? "bg-[#FFD9D2] rounded-md px-2 py-[0.125rem] font-medium text-[#FE846F] text-xs lg:text-[0.668rem]"
+                  : "bg-[#BFE8FF] rounded-md px-2 py-[0.125rem] font-medium text-[#65B9E7] text-xs lg:text-[0.668rem]"
+              }
+            >
+              {type}
+            </button>
+            <div className="flex items-center gap-x-1">
+              {priority === "Penting" && (
+                <Icon
+                  icon="iconamoon:flag-fill"
+                  color="#B13A41"
+                  width="16px"
+                  height="16px"
+                />
+              )}
+              {priority === "Tinggi" && (
+                <Icon
+                  icon="iconamoon:flag-fill"
+                  color="#FFC905"
+                  width="16px"
+                  height="16px"
+                />
+              )}
+              {priority === "Normal" && (
+                <Icon
+                  icon="iconamoon:flag-fill"
+                  color="#1877F2"
+                  width="16px"
+                  height="16px"
+                />
+              )}
+              {priority === "Rendah" && (
+                <Icon
+                  icon="iconamoon:flag-fill"
+                  color="#8A8A8A"
+                  width="16px"
+                  height="16px"
+                />
+              )}
+              <p className="leading-none text-xs font-medium">{priority}</p>
+            </div>
+          </div>
         </div>
         <button className="flex justify-center items-center bg-black/20 w-9 h-9 rounded-lg hover:bg-[#999999] transition duration-200">
           {icon}
         </button>
       </div>
-      <div className="bg-violet-600 h-1" style={{ width: `${percentage}%` }} />
+      <div
+        className="absolute bottom-0 left-0 bg-violet-600 h-1"
+        style={{ width: `${percentage}%` }}
+      />
     </div>
   );
 };

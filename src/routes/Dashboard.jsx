@@ -37,21 +37,29 @@ const actionBars = [
 
 const carouselItems = [
   {
-    duration: "Drafted",
+    duration: "1:00",
     title: "Alchemist Fragrance",
     date: "1 menit lalu",
     src: "/images/carousel.png",
+    status: "Diterbitkan",
     icon: <ScissorIcon size={18} color="#ffffff" />,
   },
   {
-    duration: "Drafted",
+    duration: "Tersimpan",
     title: "Product A Skincare",
     date: "15 menit lalu",
     src: "/images/carousel.png",
     icon: <ScissorIcon size={18} color="#ffffff" />,
   },
   {
-    duration: "01:00",
+    duration: "Tersimpan",
+    title: "Product A Skincare",
+    date: "9 Oktober 2024",
+    src: "/images/carousel.png",
+    icon: <ScissorIcon size={18} color="#ffffff" />,
+  },
+  {
+    duration: "Tersimpan",
     title: "Product A Skincare",
     date: "9 Oktober 2024",
     src: "/images/carousel.png",
@@ -97,21 +105,23 @@ const Dashboard = () => {
             className="absolute bottom-0 left-1/2 transform -translate-x-1/2"
           />
         </div>
-        <div className="mt-8 lg:mt-16 flex flex-col gap-y-4 lg:gap-y-8">
+        <div className="mt-16 lg:mt-16 flex flex-col gap-y-4 lg:gap-y-8">
           <DashboardSection title="Kelola Konten">
-            <div className="flex md:grid grid-cols-2 overflow-x-auto gap-y-6 w-full lg:flex gap-x-3 lg:gap-x-6 pb-4 lg:pb-0 snap-x snap-mandatory">
+            <div className="flex overflow-x-auto w-full gap-x-6 lg:gap-x-6 pb-4 lg:pb-0 snap-x snap-mandatory content-scrollbar">
               <ContentCategory contentTitle="Lanjutkan">
                 <ContentCategoryItem
                   contentDescription="Alchemist Fragrance"
                   type="Video"
                   icon={<ScissorIcon size={18} color="#ffffff" />}
                   percentage={50}
+                  priority="Penting"
                 />
                 <ContentCategoryItem
                   contentDescription="Beauty of Angel - Lip Scrub"
                   type="Video"
                   icon={<ScissorIcon size={18} color="#ffffff" />}
                   percentage={75}
+                  priority="Tinggi"
                 />
               </ContentCategory>
               <ContentCategory contentTitle="Agenda Hari Ini">
@@ -119,11 +129,13 @@ const Dashboard = () => {
                   contentDescription="Alchemist Fragrance"
                   type="Video"
                   icon={<AddCircleHalfDotIcon size={18} color="#ffffff" />}
+                  priority="Tinggi"
                 />
                 <ContentCategoryItem
                   contentDescription="Beauty of Angel - Lip Scrub"
                   type="Design"
                   icon={<AddCircleHalfDotIcon size={18} color="#ffffff" />}
+                  priority="Normal"
                 />
               </ContentCategory>
               <ContentCategory contentTitle="Agenda Besok">
@@ -131,6 +143,7 @@ const Dashboard = () => {
                   contentDescription="Beauty of Angel - Lip Scrub"
                   type="Design"
                   icon={<AddCircleHalfDotIcon size={18} color="#ffffff" />}
+                  priority="Rendah"
                 />
               </ContentCategory>
             </div>

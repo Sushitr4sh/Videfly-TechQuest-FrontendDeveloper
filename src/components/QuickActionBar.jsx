@@ -7,7 +7,7 @@ const QuickActionBar = ({ gridItems, selectedItem, onSelect }) => {
         <button
           key={index}
           onClick={() => onSelect(item)}
-          className={`hover:bg-[#dbdbdc] flex items-center justify-center gap-x-2 font-medium text-xs px-2 py-1 rounded-xl transition duration-200 ${
+          className={`hover:bg-[#dbdbdc] flex items-center justify-center gap-x-2 font-semibold text-xs px-2 py-1 rounded-xl transition duration-200 ${
             selectedItem === item ? "bg-[#dbdbdc]" : "bg-white"
           }`}
         >

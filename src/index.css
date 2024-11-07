@@ -25,3 +25,16 @@ body {
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+.content-scrollbar::-webkit-scrollbar {
+  height: 0.563rem;
+}
+
+/* .contet-scrollbar:hover::-webkit-scrollbar {
+  height: 0.75rem;
+} */
+
+.content-scrollbar::-webkit-scrollbar-thumb {
+  background: #b0b0b0;
+  border-radius: 9999px;
+}
