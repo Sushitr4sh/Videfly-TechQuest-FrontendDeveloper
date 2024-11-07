@@ -21,3 +21,7 @@ body {
   background: linear-gradient(to right, #6636d2, #6636d2, #4257e9, #2472fc);
   font-family: "Nunito", sans-serif;
 }
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}

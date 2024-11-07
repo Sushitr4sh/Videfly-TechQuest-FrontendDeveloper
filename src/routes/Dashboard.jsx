@@ -69,7 +69,7 @@ const Dashboard = () => {
           <h2 className="text-white text-xl text-[2rem] font-extrabold z-30 text-center">
             Mulai kreasi baru hari ini!
           </h2>
-          <div className="hidden lg:w-full xl:w-[72%] lg:block absolute -bottom-8 left-1/2 transform -translate-x-1/2 z-30">
+          <div className="w-full xl:w-[72%] lg:block absolute -bottom-8 left-1/2 transform -translate-x-1/2 z-30">
             <QuickActionBar
               gridItems={actionBars}
               selectedItem={selectedItem}
@@ -77,51 +77,24 @@ const Dashboard = () => {
             />
           </div>
           <img
-            src="/images/elipse1_0.png"
+            src="/images/mobile_elipse1.png"
             alt="elipse"
-            className="hidden lg:block absolute top-0 left-5"
+            className="absolute top-0 left-0"
           />
           <img
-            src="/images/elipse1_1.png"
+            src="/images/mobile_elipse2_0.png"
             alt="elipse"
-            className="hidden lg:block absolute top-0 left-5"
+            className="absolute bottom-0 left-14"
           />
           <img
-            src="/images/elipse2_0.png"
+            src="/images/mobile_elipse2_1.png"
             alt="elipse"
-            className="hidden lg:block absolute bottom-0 left-16"
+            className="absolute bottom-0 left-14"
           />
           <img
-            src="/images/elipse2_1.png"
+            src="/images/mobile_elipse3.png"
             alt="elipse"
-            className="hidden lg:block absolute bottom-0 left-16"
-          />
-          <img
-            src="/images/elipse3.png"
-            alt="elipse"
-            className="hidden lg:block absolute bottom-0 left-0 lg:left-1/2 lg:transform lg:-translate-x-1/2"
-          />
-          <img
-            src="/images/elipse4.png"
-            alt="elipse"
-            className="hidden lg:block absolute bottom-0 right-4 lg:left-1/2 lg:transform lg:-translate-x-1/2"
-          />
-          <img
-            src="/images/elipse5_0.png"
-            alt="elipse"
-            className="hidden lg:block absolute top-0 right-0 rounded-tr-2xl"
-          />
-          <img
-            src="/images/elipse5_1.png"
-            alt="elipse"
-            className="hidden lg:block absolute top-0 right-0 rounded-tr-2xl"
-          />
-        </div>
-        <div className="lg:hidden mt-4">
-          <QuickActionBar
-            gridItems={actionBars}
-            selectedItem={selectedItem}
-            onSelect={setSelectedItem}
+            className="absolute bottom-0 left-1/2 transform -translate-x-1/2"
           />
         </div>
         <div className="mt-8 lg:mt-16 flex flex-col gap-y-4 lg:gap-y-8">
