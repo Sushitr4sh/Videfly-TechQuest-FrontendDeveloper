@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 
 import MainButton from "../components/MainButton";
 import SidebarItem from "../components/SidebarItem";
+import MiscIconButton from "../components/MiscIconButton";
+import Credit from "../components/Credit";
+import SubscriptionButton from "../components/SubscriptionButton";
 
 import {
   AddCircleHalfDotIcon,
@@ -12,6 +15,7 @@ import {
   UserStar02Icon,
   Settings02Icon,
   Logout03Icon,
+  Cancel01Icon,
 } from "hugeicons-react";
 import { Icon } from "@iconify/react/dist/iconify.js";
 
@@ -69,7 +73,7 @@ const sidebarConfigItems = [
   },
 ];
 
-const Sidebar = () => {
+const Sidebar = ({ onClose }) => {
   const [selectedItem, setSelectedItem] = useState(sidebarItems[0]);
   const [selectedConfigItem, setSelectedConfigItem] = useState(null);
 
@@ -85,7 +89,10 @@ const Sidebar = () => {
 
   return (
     <aside className="flex flex-col justify-between pt-16 px-4 pb-6 border-r-2 border-[#ececec] w-[260px] h-[100dvh] z-50 gap-y-3 bg-white fixed top-0 left-0">
-      <div className="flex flex-col">
+      <button className="absolute top-4 left-4" onClick={() => onClose(false)}>
+        <Cancel01Icon width={24} height={24} color="#111336" />
+      </button>
+      <div className="flex flex-col gap-y-9">
         <Link to="/" className="self-center">
           <img
             src="/icons/logo.svg"
@@ -93,6 +100,17 @@ const Sidebar = () => {
             className="w-[8.75rem]"
           />
         </Link>
+        <div className="flex justify-between">
+          <div className="flex gap-x-2 items-center">
+            <img
+              src="/images/Profile.png"
+              alt="Profile Image"
+              className="w-9 h-9 lg:w-auto md:h-auto"
+            />
+            <p className="text-xs font-medium">Dewi Anjani</p>
+          </div>
+          <MiscIconButton />
+        </div>
         <MainButton
           rightIcon={<AddCircleHalfDotIcon size={24} strokeWidth={2} />}
         >
@@ -105,6 +123,12 @@ const Sidebar = () => {
         onSelect={handleSelectItem}
         config={false}
       />
+      <div className="flex flex-col items-center px-4">
+        <div className="h-[2.5rem] flex items-center justify-center">
+          <Credit>Sisa 5 kredit</Credit>
+        </div>
+        <SubscriptionButton>Upgrade plan</SubscriptionButton>
+      </div>
       <SidebarItem
         sidebarItems={sidebarConfigItems}
         selectedItem={selectedConfigItem}

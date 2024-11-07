@@ -103,16 +103,15 @@ const MainHeader = () => {
       </div>
       {isOpen && (
         <Modal onClose={setIsOpen}>
-          <Sidebar />
+          <Sidebar onClose={setIsOpen} />
         </Modal>
       )}
       <nav className="flex gap-x-6 ">
-        <div className="flex items-center">
+        <div className="hidden lg:flex items-center">
           <Credit>Sisa 5 kredit</Credit>
           <SubscriptionButton>Upgrade plan</SubscriptionButton>
         </div>
         <div className="flex gap-x-1 items-center">
-          {/* <MiscIconButton isNotifOpen={isNotifOpen} onSelect={setIsNotifOpen} /> */}
           <div className="flex items-center gap-x-3 md:gap-x-2">
             <p className="md:text-xs hidden md:block">Dewi Anjani</p>
             <img

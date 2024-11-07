@@ -8,9 +8,9 @@ const SidebarItem = ({ sidebarItems, selectedItem, onSelect, config }) => {
             <button
               key={index}
               onClick={() => onSelect(item)}
-              className={`hover:bg-violet-100 flex items-center gap-x-3 hover:text-violet-500 hover:font-semibold text-sm px-4 py-2 rounded-xl w-full transition duration-200 ${
+              className={`hover:bg-[#F1EBFD] flex items-center gap-x-3 hover:text-[#8D62EC] hover:font-semibold text-sm px-4 py-2 rounded-xl w-full transition duration-200 ${
                 selectedItem === item
-                  ? "bg-violet-100 text-violet-500 font-semibold"
+                  ? "bg-[#F1EBFD] text-[#8D62EC] font-semibold"
                   : "bg-white text-black font-medium"
               }`}
             >
