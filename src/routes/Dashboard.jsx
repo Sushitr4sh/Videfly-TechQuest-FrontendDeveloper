@@ -16,21 +16,21 @@ import Carousel from "../components/Carousel";
 
 const actionBars = [
   {
-    icon: <Icon icon="mage:video" width={"24px"} height={"24px"} />,
+    icon: <Icon icon="mage:video" width={"18px"} height={"18px"} />,
     text: "URL to Video",
   },
   {
     icon: (
-      <Icon icon="fluent:textbox-16-regular" width={"24px"} height={"24px"} />
+      <Icon icon="fluent:textbox-16-regular" width={"18px"} height={"18px"} />
     ),
     text: "Text to Video",
   },
   {
-    icon: <Icon icon="tdesign:user-talk-1" width={"24px"} height={"24px"} />,
+    icon: <Icon icon="tdesign:user-talk-1" width={"18px"} height={"18px"} />,
     text: "Speech to Video",
   },
   {
-    icon: <UserStar02Icon size={24} strokeWidth={2} />,
+    icon: <UserStar02Icon size={18} strokeWidth={2} />,
     text: "AI Avatar",
   },
 ];
@@ -69,7 +69,7 @@ const Dashboard = () => {
           <h2 className="text-white text-xl text-[2rem] font-extrabold z-30 text-center">
             Mulai kreasi baru hari ini!
           </h2>
-          <div className="w-full xl:w-[72%] lg:block absolute -bottom-8 left-1/2 transform -translate-x-1/2 z-30">
+          <div className="w-[95%] xl:w-[72%] lg:block absolute -bottom-8 left-1/2 transform -translate-x-1/2 z-30">
             <QuickActionBar
               gridItems={actionBars}
               selectedItem={selectedItem}
