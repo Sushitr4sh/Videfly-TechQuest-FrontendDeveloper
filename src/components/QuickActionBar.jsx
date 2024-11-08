@@ -2,7 +2,7 @@ import React from "react";
 
 const QuickActionBar = ({ gridItems, selectedItem, onSelect }) => {
   return (
-    <div className="flex items-center justify-start overflow-x-scroll w-full p-2 rounded-xl lg:rounded-1366 bg-white z-30 border border-[#ececec] hide-scrollbar ">
+    <div className="flex items-center justify-start overflow-x-scroll w-full p-2 rounded-xl lg:rounded-2xl bg-white z-30 border border-[#ececec] hide-scrollbar ">
       {gridItems.map((item, index) => (
         <button
           key={index}

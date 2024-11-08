@@ -61,6 +61,12 @@ const carouselItems = [
     date: "9 Oktober 2024",
     src: "/images/carousel.png",
   },
+  {
+    duration: "Draf",
+    title: "Product A Skincare",
+    date: "9 Oktober 2024",
+    src: "/images/carousel.png",
+  },
 ];
 
 const Dashboard = () => {
@@ -126,7 +132,7 @@ const Dashboard = () => {
         </div>
         <div className="mt-16 lg:mt-16 flex flex-col gap-y-4 lg:gap-y-8">
           <DashboardSection title="Kelola Konten">
-            <div className="flex overflow-x-auto w-full gap-x-6 lg:gap-x-6 pb-4 lg:pb-0 snap-x snap-mandatory content-scrollbar">
+            <div className="flex overflow-x-auto w-full gap-x-6 lg:gap-x-6 pb-4 lg:pb-2 snap-x snap-mandatory content-scrollbar">
               <ContentCategory contentTitle="Lanjutkan">
                 <ContentCategoryItem
                   index={0}
