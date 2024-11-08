@@ -16,28 +16,46 @@ import Carousel from "../components/Carousel";
 
 const actionBars = [
   {
-    icon: <Icon icon="mage:video" width={"18px"} height={"18px"} />,
+    icon: (
+      <Icon
+        icon="mage:video"
+        className="w-[18px] h-[18px] lg:w-[24px] lg:h-[24px]"
+      />
+    ),
     text: "URL to Video",
   },
   {
     icon: (
-      <Icon icon="fluent:textbox-16-regular" width={"18px"} height={"18px"} />
+      <Icon
+        icon="fluent:textbox-16-regular"
+        className="w-[18px] h-[18px] lg:w-[24px] lg:h-[24px]"
+      />
     ),
     text: "Text to Video",
   },
   {
-    icon: <Icon icon="tdesign:user-talk-1" width={"18px"} height={"18px"} />,
+    icon: (
+      <Icon
+        icon="tdesign:user-talk-1"
+        className="w-[18px] h-[18px] lg:w-[24px] lg:h-[24px]"
+      />
+    ),
     text: "Speech to Video",
   },
   {
-    icon: <UserStar02Icon size={18} strokeWidth={2} />,
+    icon: (
+      <UserStar02Icon
+        strokeWidth={1.5}
+        className="w-[18px] h-[18px] lg:w-[24px] lg:h-[24px]"
+      />
+    ),
     text: "AI Avatar",
   },
 ];
 
 const carouselItems = [
   {
-    duration: "1:00",
+    duration: "1:10",
     title: "Alchemist Fragrance",
     date: "1 menit lalu",
     src: "/images/carousel.png",

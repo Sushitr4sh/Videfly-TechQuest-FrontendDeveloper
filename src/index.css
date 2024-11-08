@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    @apply text-[#111336];
+  }
+}
+
 body {
   font-family: "Poppins", sans-serif;
 }

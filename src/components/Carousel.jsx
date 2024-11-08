@@ -24,8 +24,13 @@ const Carousel = ({ items }) => {
                 className="object-cover object-top w-full"
                 alt="Carousel Image"
               />
-              <div className="flex items-center text-white justify-between w-full absolute top-0 p-3">
-                <TimeButton visible={true}>{item.duration}</TimeButton>
+              <div className="flex items-center text-white justify-between w-full absolute top-0 p-2">
+                <div className="flex items-center gap-x-1">
+                  {item.duration !== "Draf" && (
+                    <TimeButton visible={true}>Render</TimeButton>
+                  )}
+                  <TimeButton visible={true}>{item.duration}</TimeButton>
+                </div>
                 <TimeButton type="icon" visible={showOption === index}>
                   <Icon
                     icon="pepicons-pencil:dots-x"
@@ -36,12 +41,12 @@ const Carousel = ({ items }) => {
               </div>
               <div className="flex justify-between px-3 mt-3">
                 <div className="flex flex-col gap-y-1">
-                  <p className="text-sm lg:text-xs font-semibold text-[#584F6A]">
+                  <p className="text-sm lg:text-xs font-semibold text-[#111336]">
                     {item.title}
                   </p>
                   <div className="flex justify-between gap-x-2 items-center">
                     <p
-                      className={`text-[0.688rem] text-[#584F6A] ${
+                      className={`text-[0.688rem] text-[#545454] ${
                         !item.status && "py-[0.125rem]"
                       }`}
                     >
