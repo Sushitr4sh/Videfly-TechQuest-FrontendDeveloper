@@ -67,7 +67,11 @@ const Carousel = ({ items }) => {
                   onMouseUp={() => setActiveIndex(null)}
                   onTouchStart={() => setActiveIndex(index)}
                   onTouchEnd={() => setActiveIndex(null)}
-                  className="flex justify-center items-center bg-black/5 hover:bg-black/10 active:bg-[#8D62EC] w-9 h-9 rounded-lg transition duration-200"
+                  className={`flex justify-center items-center ${
+                    activeIndex === index
+                      ? "bg-[#8D62EC]"
+                      : "bg-black/5 hoverable:hover:bg-black/10"
+                  } w-9 h-9 rounded-lg transition duration-200`}
                 >
                   <div
                     className="transition-colors duration-200"
