@@ -1,6 +1,9 @@
 import { Icon } from "@iconify/react/dist/iconify.js";
 
 const ContentCategoryItem = ({
+  index,
+  activeIndex,
+  setActiveIndex,
   contentDescription,
   type,
   icon,
@@ -8,7 +11,7 @@ const ContentCategoryItem = ({
   percentage = 0,
 }) => {
   return (
-    <div className="flex flex-col border border-[#ECECEC] rounded-2xl overflow-hidden p-4 relative">
+    <div className="flex flex-col border border-[#ECECEC] rounded-1366 overflow-hidden p-4 relative">
       <div className="flex justify-between">
         <div className="flex flex-col gap-y-1">
           <h5 className="font-semibold text-sm lg:text-xs mb-1-">
@@ -61,8 +64,19 @@ const ContentCategoryItem = ({
             </div>
           </div>
         </div>
-        <button className="flex justify-center items-center bg-black/20 w-9 h-9 rounded-lg hover:bg-[#999999] transition duration-200">
-          {icon}
+        <button
+          onMouseDown={() => setActiveIndex(index)}
+          onMouseUp={() => setActiveIndex(null)}
+          className="flex justify-center items-center bg-black/5 hover:bg-black/10 active:bg-[#8D62EC] w-9 h-9 rounded-lg transition duration-200"
+        >
+          <div
+            className="transition-colors duration-200"
+            style={{
+              color: activeIndex === index ? "#FFFFFF" : "#111936",
+            }}
+          >
+            {icon}
+          </div>
         </button>
       </div>
       <div

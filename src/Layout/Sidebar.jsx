@@ -89,28 +89,28 @@ const Sidebar = ({ onClose, isNotifOpen, setIsNotifOpen }) => {
 
   return (
     <>
-      <aside className="flex flex-col justify-between pt-16 2xl:pt-9 px-4 pb-6 border-r border-[#ececec] w-[16.25rem] h-[100dvh] z-50 gap-y-3 bg-white fixed top-0 left-0 sm:hidden 2xl:flex">
+      <aside className="flex flex-col justify-between pt-16 1366:pt-9 px-4 pb-6 border-r border-[#ececec] w-[16.25rem] h-[100dvh] z-50 gap-y-3 bg-white fixed top-0 left-0 sm:hidden 1366:flex">
         <button
-          className="absolute top-4 left-4 2xl:hidden"
+          className="absolute top-4 left-4 1366:hidden"
           onClick={() => onClose(false)}
         >
           <Cancel01Icon width={24} height={24} color="#111336" />
         </button>
-        <Link to="/" className="self-center hidden 2xl:block">
+        <Link to="/" className="self-center hidden 1366:block">
           <img
-            src="/icons/logo.svg"
+            src="/icons/logo2.svg"
             alt="videfly logo"
             className="w-[8.75rem]"
           />
         </Link>
-        <div className="w-full hidden 2xl:block">
+        <div className="w-full hidden 1366:block">
           <MainButton
             rightIcon={<AddCircleHalfDotIcon size={24} strokeWidth={2} />}
           >
             Buat Video
           </MainButton>
         </div>
-        <div className="flex flex-col gap-y-9 2xl:hidden">
+        <div className="flex flex-col gap-y-9 1366:hidden">
           <Link to="/" className="self-center">
             <img
               src="/icons/logo.svg"
@@ -118,7 +118,7 @@ const Sidebar = ({ onClose, isNotifOpen, setIsNotifOpen }) => {
               className="w-[8.75rem]"
             />
           </Link>
-          <div className="flex justify-between 2xl:hidden">
+          <div className="flex justify-between 1366:hidden">
             <div className="flex gap-x-2 items-center">
               <img
                 src="/images/Profile.png"
@@ -144,7 +144,7 @@ const Sidebar = ({ onClose, isNotifOpen, setIsNotifOpen }) => {
           onSelect={handleSelectItem}
           config={false}
         />
-        <div className="flex flex-col items-center px-4 2xl:hidden">
+        <div className="flex flex-col items-center px-4 1366:hidden">
           <div className="h-[2.5rem] flex items-center justify-center">
             <Credit>Sisa 5 kredit</Credit>
           </div>
@@ -158,12 +158,12 @@ const Sidebar = ({ onClose, isNotifOpen, setIsNotifOpen }) => {
         />
       </aside>
 
-      <aside className="hidden sm:flex 2xl:hidden flex-col justify-between py-6 border-r border-[#ececec] w-[5rem] h-[100dvh] z-50 gap-y-3 bg-white fixed top-0 left-0">
+      <aside className="hidden sm:flex 1366:hidden flex-col justify-between py-6 border-r border-[#ececec] w-[5rem] h-[100dvh] z-50 gap-y-3 bg-white fixed top-0 left-0">
         <div className="flex flex-col gap-y-[2.875rem] items-center">
           <div className="px-4 flex flex-col gap-y-[2.875rem]">
             <Link to="/" className="self-center">
               <img
-                src="/icons/logo-short.svg"
+                src="/icons/logo-short2.svg"
                 alt="videfly logo"
                 className="w-12"
               />

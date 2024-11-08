@@ -42,39 +42,36 @@ const carouselItems = [
     date: "1 menit lalu",
     src: "/images/carousel.png",
     status: "Diterbitkan",
-    icon: <ScissorIcon size={18} color="#ffffff" />,
   },
   {
-    duration: "Tersimpan",
+    duration: "Draf",
     title: "Product A Skincare",
     date: "15 menit lalu",
     src: "/images/carousel.png",
-    icon: <ScissorIcon size={18} color="#ffffff" />,
   },
   {
-    duration: "Tersimpan",
+    duration: "Draf",
     title: "Product A Skincare",
     date: "9 Oktober 2024",
     src: "/images/carousel.png",
-    icon: <ScissorIcon size={18} color="#ffffff" />,
   },
   {
-    duration: "Tersimpan",
+    duration: "Draf",
     title: "Product A Skincare",
     date: "9 Oktober 2024",
     src: "/images/carousel.png",
-    icon: <ScissorIcon size={18} color="#ffffff" />,
   },
 ];
 
 const Dashboard = () => {
   const [selectedItem, setSelectedItem] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(null);
   return (
     <>
       <Outlet />
-      <main className="mt-[4.375rem] sm:mt-[5.75rem] mx-4 sm:mr-6 sm:ml-[6.5rem] lg:mr-[2.625rem] lg:ml-[7.625rem] 2xl:ml-[18.875rem] pb-4">
+      <main className="mt-[4.375rem] sm:mt-[5.75rem] mx-4 sm:mr-6 sm:ml-[6.5rem] lg:mr-[2.625rem] lg:ml-[7.625rem] 1366:ml-[18.875rem] pb-4">
         <div className="w-full h-[8.75rem] lg:h-[11.25rem] gradient-banner relative flex items-center justify-center rounded-2xl px-8 lg:px-0">
-          <h2 className="text-white text-xl sm:text-2xl lg:text-[2rem] font-extrabold z-30 text-center">
+          <h2 className="text-white text-xl sm:text-1366 lg:text-[2rem] font-extrabold z-30 text-center">
             Mulai kreasi baru hari ini!
           </h2>
           <div className="w-[22rem] sm:w-[30.75rem] lg:w-[46rem] absolute -bottom-8 left-1/2 transform -translate-x-1/2 z-30">
@@ -132,37 +129,52 @@ const Dashboard = () => {
             <div className="flex overflow-x-auto w-full gap-x-6 lg:gap-x-6 pb-4 lg:pb-0 snap-x snap-mandatory content-scrollbar">
               <ContentCategory contentTitle="Lanjutkan">
                 <ContentCategoryItem
+                  index={0}
+                  activeIndex={activeIndex}
+                  setActiveIndex={setActiveIndex}
                   contentDescription="Alchemist Fragrance"
                   type="Video"
-                  icon={<ScissorIcon size={18} color="#ffffff" />}
+                  icon={<ScissorIcon size={18} />}
                   priority="Penting"
                 />
                 <ContentCategoryItem
+                  index={1}
+                  activeIndex={activeIndex}
+                  setActiveIndex={setActiveIndex}
                   contentDescription="Beauty of Angel - Lip Scrub"
                   type="Video"
-                  icon={<ScissorIcon size={18} color="#ffffff" />}
+                  icon={<ScissorIcon size={18} />}
                   priority="Tinggi"
                 />
               </ContentCategory>
               <ContentCategory contentTitle="Agenda Hari Ini">
                 <ContentCategoryItem
+                  index={2}
+                  activeIndex={activeIndex}
+                  setActiveIndex={setActiveIndex}
                   contentDescription="Alchemist Fragrance"
                   type="Video"
-                  icon={<AddCircleHalfDotIcon size={18} color="#ffffff" />}
+                  icon={<AddCircleHalfDotIcon size={18} />}
                   priority="Tinggi"
                 />
                 <ContentCategoryItem
+                  index={3}
+                  activeIndex={activeIndex}
+                  setActiveIndex={setActiveIndex}
                   contentDescription="Beauty of Angel - Lip Scrub"
                   type="Design"
-                  icon={<AddCircleHalfDotIcon size={18} color="#ffffff" />}
+                  icon={<AddCircleHalfDotIcon size={18} />}
                   priority="Normal"
                 />
               </ContentCategory>
               <ContentCategory contentTitle="Agenda Besok">
                 <ContentCategoryItem
+                  index={4}
+                  activeIndex={activeIndex}
+                  setActiveIndex={setActiveIndex}
                   contentDescription="Beauty of Angel - Lip Scrub"
                   type="Design"
-                  icon={<AddCircleHalfDotIcon size={18} color="#ffffff" />}
+                  icon={<AddCircleHalfDotIcon size={18} />}
                   priority="Rendah"
                 />
               </ContentCategory>
