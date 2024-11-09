@@ -21,7 +21,7 @@ const Carousel = ({ items }) => {
             <div className="w-full">
               <img
                 src={item.src}
-                className="object-cover object-top w-full"
+                className="object-cover object-top w-full rounded-2xl"
                 alt="Carousel Image"
               />
               <div className="flex items-center text-white justify-between w-full absolute top-0 p-2">

@@ -234,7 +234,7 @@ const Sidebar = ({ onClose, isNotifOpen, setIsNotifOpen }) => {
         />
       </aside>
 
-      <aside className="hidden sm:flex 1366:hidden flex-col justify-between py-6 border-r border-[#ececec] w-[5rem] h-[100dvh] z-50 gap-y-3 bg-white fixed top-0 left-0 overflow-y-auto hide-scrollbar">
+      <aside className="hidden sm:flex 1366:hidden flex-col justify-between py-6 border-r-2 border-[#ececec] w-[5rem] h-[100dvh] z-50 gap-y-3 bg-white fixed top-0 left-0 overflow-y-auto hide-scrollbar">
         <div className="flex flex-col gap-y-[2.875rem] items-center">
           <div className="px-4 flex flex-col gap-y-[2.875rem]">
             <Link to="/" className="self-center">
