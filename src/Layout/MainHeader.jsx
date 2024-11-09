@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Credit from "../components/Credit";
 import SubscriptionButton from "../components/SubscriptionButton";
@@ -59,6 +59,14 @@ const notifications = [
 
 const MainHeader = ({ isNotifOpen, setIsNotifOpen }) => {
   const [isOpen, setIsOpen] = useState(false);
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+    return () => document.body.classList.remove("overflow-hidden");
+  }, [isOpen]);
 
   return (
     <header className="fixed left-0 top-0 bg-white flex w-full h-[3.5rem] items-center justify-between px-4 sm:px-6 lg:px-10 lg:py-1 z-40">
