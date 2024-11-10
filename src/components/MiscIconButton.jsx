@@ -5,7 +5,7 @@ const MiscIconButton = ({ isNotifOpen, onSelect }) => {
     <div className="relative">
       <button
         onClick={() => onSelect(!isNotifOpen)}
-        className="flex justify-center items-center rounded-lg hover:bg-[#d3c2f8] transition duration-200 "
+        className="flex justify-center items-center rounded-lg hover:bg-[#d3c2f8] transition duration-200"
       >
         <img src="/icons/notification-01.svg" alt="notification icon" />
       </button>

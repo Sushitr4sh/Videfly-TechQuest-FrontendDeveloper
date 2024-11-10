@@ -194,7 +194,7 @@ const Sidebar = ({ onClose, isNotifOpen, setIsNotifOpen }) => {
               />
             </svg>
           </Link>
-          <div className="flex justify-between hidden">
+          <div className="justify-between hidden">
             <div className="flex gap-x-2 items-center">
               <img
                 src="/images/Profile.png"
