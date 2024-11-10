@@ -1,19 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { ScissorIcon } from "hugeicons-react";
 import TimeButton from "./TimeButton";
 
+const useHoverSupport = () => {
+  const [isHoverSupported, setIsHoverSupported] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(hover: hover)");
+    setIsHoverSupported(mediaQuery.matches);
+
+    const handleChange = (event) => setIsHoverSupported(event.matches);
+    mediaQuery.addEventListener("change", handleChange);
+
+    return () => mediaQuery.removeEventListener("change", handleChange);
+  }, []);
+
+  return isHoverSupported;
+};
+
 const Carousel = ({ items }) => {
   const [activeIndex, setActiveIndex] = useState(null);
   const [showOption, setShowOption] = useState(null);
+  const isHoverSupported = useHoverSupport();
 
   return (
     <div className="relative">
       <div className="overflow-x-auto flex scrollbar-hide gap-x-6 snap-x snap-mandatory pb-4 lg:pb-2 content-scrollbar">
         {items.map((item, index) => (
           <div
-            onMouseEnter={() => setShowOption(index)}
-            onMouseLeave={() => setShowOption(null)}
+            onMouseEnter={() => isHoverSupported && setShowOption(index)}
+            onMouseLeave={() => isHoverSupported && setShowOption(null)}
             onTouchStart={() => setShowOption(index)}
             key={index}
             className="w-[15.875rem] pb-3 border border-[#ececec] rounded-2xl shrink-0 flex items-center justify-center overflow-hidden relative snap-center"
@@ -31,7 +48,10 @@ const Carousel = ({ items }) => {
                   )}
                   <TimeButton visible={true}>{item.duration}</TimeButton>
                 </div>
-                <TimeButton type="icon" visible={showOption === index}>
+                <TimeButton
+                  type="icon"
+                  visible={showOption === index || !isHoverSupported}
+                >
                   <Icon
                     icon="pepicons-pencil:dots-x"
                     width={"24px"}
