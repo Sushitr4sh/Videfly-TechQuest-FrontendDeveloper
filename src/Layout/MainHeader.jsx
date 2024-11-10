@@ -196,7 +196,7 @@ const MainHeader = ({ isNotifOpen, setIsNotifOpen }) => {
           <SubscriptionButton>Upgrade plan</SubscriptionButton>
         </div>
         <div className="flex gap-x-1 items-center">
-          <div className="hidden sm:block">
+          <div>
             <MiscIconButton
               isNotifOpen={isNotifOpen}
               onSelect={setIsNotifOpen}
