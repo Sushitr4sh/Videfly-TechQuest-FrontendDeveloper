@@ -12,6 +12,10 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+.font-nunito {
+  font-family: "Nunito", sans-serif;
+}
+
 .gradient-button {
   background: linear-gradient(
     to right,

@@ -19,21 +19,23 @@ const useHoverSupport = () => {
   return isHoverSupported;
 };
 
-const Carousel = ({ items }) => {
+const Carousel = ({ items, project = false }) => {
   const [activeIndex, setActiveIndex] = useState(null);
   const [showOption, setShowOption] = useState(null);
   const isHoverSupported = useHoverSupport();
 
   return (
     <div className="relative">
-      <div className="overflow-x-auto flex scrollbar-hide gap-x-6 snap-x snap-mandatory pb-4 lg:pb-2 content-scrollbar">
+      <div className="overflow-x-auto flex scrollbar-hide gap-x-6 snap-x snap-mandatory pb-3 lg:pb-2 content-scrollbar">
         {items.map((item, index) => (
           <div
             onMouseEnter={() => isHoverSupported && setShowOption(index)}
             onMouseLeave={() => isHoverSupported && setShowOption(null)}
             onTouchStart={() => setShowOption(index)}
             key={index}
-            className="w-[15.875rem] pb-3 border border-[#ececec] rounded-2xl shrink-0 flex items-center justify-center overflow-hidden relative snap-center"
+            className={`${
+              project ? "w-[15.375rem] h-[15rem]" : "w-[15.875rem]"
+            }  pb-3 border border-[#ececec] rounded-2xl shrink-0 flex items-center justify-center overflow-hidden relative snap-center`}
           >
             <div className="w-full">
               <img
