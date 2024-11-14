@@ -65,6 +65,19 @@ const filters = ["Semua", "Konten", "Berkas", "Gambar", "Video", "Sampah"];
 
 const Project = () => {
   const [filter, setFilter] = useState(filters[0]);
+
+  const [visibleSections, setVisibleSections] = useState({
+    content: true,
+    file: true,
+    image: true,
+    video: true,
+  });
+  const toggleSection = (section) => {
+    setVisibleSections((prevState) => ({
+      ...prevState,
+      [section]: !prevState[section],
+    }));
+  };
   return (
     <>
       <Outlet />
@@ -134,20 +147,48 @@ const Project = () => {
         {filter === "Semua" && (
           <>
             <div className="mt-6 flex flex-col gap-y-4">
-              <MinMaxButton>Konten</MinMaxButton>
-              <Carousel items={carouselItems} type="content" />
+              <MinMaxButton
+                onClick={() => toggleSection("content")}
+                rotated={!visibleSections.content}
+              >
+                Konten
+              </MinMaxButton>
+              {visibleSections.content && (
+                <Carousel items={carouselItems} type="content" />
+              )}
             </div>
             <div className="mt-6 flex flex-col gap-y-4">
-              <MinMaxButton>Berkas</MinMaxButton>
-              <Carousel items={berkasItems} type="file" />
+              <MinMaxButton
+                onClick={() => toggleSection("file")}
+                rotated={!visibleSections.file}
+              >
+                Berkas
+              </MinMaxButton>
+              {visibleSections.file && (
+                <Carousel items={berkasItems} type="file" />
+              )}
             </div>
             <div className="mt-6 flex flex-col gap-y-4">
-              <MinMaxButton>Gambar</MinMaxButton>
-              <Carousel items={carouselItems} type="content" />
+              <MinMaxButton
+                onClick={() => toggleSection("image")}
+                rotated={!visibleSections.image}
+              >
+                Gambar
+              </MinMaxButton>
+              {visibleSections.image && (
+                <Carousel items={carouselItems} type="content" />
+              )}
             </div>
             <div className="mt-6 flex flex-col gap-y-4">
-              <MinMaxButton>Video</MinMaxButton>
-              <Carousel items={carouselItems} type="content" />
+              <MinMaxButton
+                onClick={() => toggleSection("video")}
+                rotated={!visibleSections.video}
+              >
+                Video
+              </MinMaxButton>
+              {visibleSections.video && (
+                <Carousel items={carouselItems} type="content" />
+              )}
             </div>
           </>
         )}

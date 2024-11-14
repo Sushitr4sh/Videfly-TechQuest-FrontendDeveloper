@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const SidebarItem = ({ sidebarItems, selectedItem, onSelect, config }) => {
+  const navigate = useNavigate();
   return (
     <div className="flex flex-col gap-y-2 sm:gap-y-4 1366:gap-y-2">
       {!config
@@ -8,7 +10,10 @@ const SidebarItem = ({ sidebarItems, selectedItem, onSelect, config }) => {
             <div className="sm:px-2 1366:px-0">
               <button
                 key={index}
-                onClick={() => onSelect(item)}
+                onClick={() => {
+                  onSelect(item);
+                  navigate(`${item.url}`);
+                }}
                 className={`hover:bg-[#F1EBFD] flex sm:flex-col 1366:flex-row items-center gap-x-3 text-sm px-4 py-2 sm:py-0 1366:py-2 font-medium rounded-xl w-full transition duration-200 ${
                   selectedItem === item &&
                   "bg-[#F1EBFD] text-[#8D62EC] font-semibold"

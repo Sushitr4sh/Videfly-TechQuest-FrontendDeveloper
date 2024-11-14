@@ -23,21 +23,25 @@ const sidebarItems = [
   {
     icon: <Home03Icon strokeWidth={1.5} size={24} />,
     text: "Beranda",
+    url: "/",
     alt: "home page icon",
   },
   {
     icon: <Calendar03Icon strokeWidth={1.5} size={24} />,
     text: "Kelola Konten",
+    url: "/",
     alt: "manage content icon",
   },
   {
     icon: <FolderLibraryIcon strokeWidth={1.5} size={24} />,
     text: "Proyek",
+    url: "/project",
     alt: "project icon",
   },
   {
     icon: <Icon icon="streamline:ai-edit-spark" width={24} height={24} />,
     text: "AI Tools",
+    url: "/",
     alt: "ai tools icon",
   },
   {
@@ -46,6 +50,7 @@ const sidebarItems = [
     strokeLinecap: "round",
     strokeLinejoin: "round",
     text: "Brand Kit",
+    url: "/",
     alt: "brand kit icon",
   },
 ];
@@ -54,11 +59,13 @@ const sidebarConfigItems = [
   {
     icon: <Settings02Icon strokeWidth={1.5} size={24} />,
     text: "Pengaturan",
+    url: "/",
     alt: "Settings icon",
   },
   {
     icon: <Logout03Icon strokeWidth={1.5} size={24} color="#FF6D6D" />,
     text: "Keluar",
+    url: "/",
     alt: "logout icon",
   },
 ];
