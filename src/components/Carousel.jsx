@@ -30,7 +30,9 @@ const Carousel = ({ items, type, filter = "semua" }) => {
         className={`${
           filter === "semua"
             ? "overflow-x-auto flex scrollbar-hide gap-x-6 snap-x snap-mandatory pb-3 lg:pb-2 content-scrollbar"
-            : "w-full flex flex-col justify-center items-center gap-y-6"
+            : `w-full flex flex-col sm:flex-row justify-center lg:justify-start items-center sm:flex-wrap sm:gap-x-4 md:gap-x-[2.375rem] lg:gap-x-6 gap-y-6 md:gap-y-[2.375rem] ${
+                filter === "Berkas" && "md:grid-cols-3"
+              }`
         }`}
       >
         {type !== "file"
@@ -42,7 +44,7 @@ const Carousel = ({ items, type, filter = "semua" }) => {
                 key={index}
                 className={`${
                   type === "content"
-                    ? "w-[15.375rem] h-[15rem]"
+                    ? "w-[15.375rem] md:w-[15.875rem] h-[15rem] md:h-[243px]"
                     : "w-[15.875rem]"
                 } pb-3 border border-[#ececec] rounded-2xl shrink-0 flex items-center justify-center overflow-hidden relative snap-center`}
               >

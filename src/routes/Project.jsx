@@ -47,6 +47,18 @@ const berkasItems = [
     date: "15 menit lalu",
     src: ["/images/files2.png", "/images/files2_1.png", "/images/files2_2.png"],
   },
+  {
+    title: "Aset Mockup",
+    total: 4,
+    date: "15 menit lalu",
+    src: ["/images/files2.png", "/images/files2_1.png", "/images/files2_2.png"],
+  },
+  {
+    title: "Aset Mockup",
+    total: 4,
+    date: "15 menit lalu",
+    src: ["/images/files2.png", "/images/files2_1.png", "/images/files2_2.png"],
+  },
 ];
 
 const filters = ["Semua", "Konten", "Berkas", "Gambar", "Video", "Sampah"];
@@ -61,7 +73,14 @@ const Project = () => {
           <h1 className="font-bold text-xl font-nunito">Proyek</h1>
           <SearchBar />
         </div>
-        <div className="flex flex-col gap-y-4 pb-2 mt-4 border-b border-[#E6E6E6]">
+        <div className="flex flex-col sm:flex-row gap-y-4 pb-2 mt-4 border-b border-[#E6E6E6]">
+          <div className="hidden sm:block">
+            <FilterToggle
+              filters={filters}
+              filter={filter}
+              onSelect={setFilter}
+            />
+          </div>
           <div className="w-full flex justify-end gap-x-[0.625rem]">
             <CustomButton>
               <svg
@@ -79,8 +98,12 @@ const Project = () => {
                   strokeLinejoin="round"
                 />
               </svg>
+              <p className="hidden lg:block text-xs font-medium">Urutkan</p>
             </CustomButton>
             <CustomButton color="#703BE7">
+              <p className="hidden lg:block text-xs font-semibold text-white">
+                Tambah
+              </p>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="18"
@@ -98,11 +121,13 @@ const Project = () => {
               </svg>
             </CustomButton>
           </div>
-          <FilterToggle
-            filters={filters}
-            filter={filter}
-            onSelect={setFilter}
-          />
+          <div className="sm:hidden">
+            <FilterToggle
+              filters={filters}
+              filter={filter}
+              onSelect={setFilter}
+            />
+          </div>
         </div>
 
         {/* Semua */}
@@ -191,7 +216,7 @@ const Project = () => {
                 dihapus secara otomatis.
               </p>
             </div>
-            <Carousel items={carouselItems} filter={filter} />
+            <Carousel items={carouselItems} filter={filter} type="content" />
           </div>
         )}
       </main>

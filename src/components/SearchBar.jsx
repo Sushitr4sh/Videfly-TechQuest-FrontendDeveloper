@@ -4,7 +4,7 @@ import { Search01Icon } from "hugeicons-react";
 
 const SearchBar = () => {
   return (
-    <div className="flex gap-x-2 items-center p-2 w-[12.5rem] bg-[#F2ECFF] rounded-xl">
+    <div className="flex gap-x-2 items-center p-2 w-[12.5rem] sm:w-[13.5rem] bg-[#F2ECFF] rounded-xl">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="16"

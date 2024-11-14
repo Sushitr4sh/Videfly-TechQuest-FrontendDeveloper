@@ -16,6 +16,14 @@ body {
   font-family: "Nunito", sans-serif;
 }
 
+.w-full .grid-item:nth-child(odd) {
+  justify-self: end; /* Align odd items to the right */
+}
+
+.w-full .grid-item:nth-child(even) {
+  justify-self: start; /* Align even items to the left */
+}
+
 .gradient-button {
   background: linear-gradient(
     to right,
